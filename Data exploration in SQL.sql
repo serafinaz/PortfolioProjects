@@ -91,7 +91,7 @@ AS (
 SELECT *
 FROM PopvsVac;
 
---TEMP TABLE 把刚刚用with创建的虚拟表再塞到一个临时表中
+--TEMP TABLE
 DROP TABLE IF EXISTS #Percentpopulationvaccinated
 CREATE TABLE #Percentpopulationvaccinated
 (
