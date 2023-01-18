@@ -35,20 +35,12 @@ pd.set_option('display.max_rows', None)
 #drop any duplicate
 df['company'].drop_duplicates().sort_values(ascending=False)
 
-#budget with high correlation
-#company high correlation
 
-#build a scatter plot with score vs gross
-#plt.scatter(x = df['score'], y = ['gross']) # xy have different sizes.
-#plt.title('score vs gross earning')
-#plt.xlabel('Gross Earnings')
-#plt.ylabel('Score for film')
-#plt.show()
-
-#plot the budget vs gross useing seaborn
+#plot the score vs gross earning useing seaborn
 sns.regplot(x= 'score', y= 'gross', data=df, scatter_kws={'color': 'red'},line_kws={'color': 'blue'})
 plt.show()
-#Looking at correlation
+
+#Looking at correlation between score vs gross earning 
 df2 = df.iloc[0:7669,11:13]
 correlation_matrix = df2.corr(method='pearson') #pearson, kendall, spearman
 sns.heatmap(correlation_matrix, annot=True)
